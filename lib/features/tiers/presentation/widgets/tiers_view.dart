@@ -1,4 +1,4 @@
-import 'package:cat_app_toy_project/features/tiers/presentation/widgets/tier_chart.dart';
+import 'package:mobile_engineer_assignment/features/tiers/presentation/widgets/tier_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../blocs/tiers/tiers_cubit.dart';

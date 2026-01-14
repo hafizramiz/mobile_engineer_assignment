@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-final class AppStrings{
+final class AppStrings {
   AppStrings._();
   static const String appName = 'Cat App Toy Project';
   static const String tierLevel = 'TIER LEVEL';

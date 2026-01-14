@@ -1,0 +1,108 @@
+Resolving dependencies...
+Downloading packages...
+  bloc 8.1.4 (9.2.0 available)
+  characters 1.4.0 (1.4.1 available)
+  dio 4.0.6 (affected by advisories: [^0], [^1], 5.9.0 available)
+  flutter_bloc 8.1.6 (9.1.1 available)
+  get_it 7.7.0 (9.2.0 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  test_api 0.7.7 (0.7.9 available)
+Got dependencies!
+Dependencies are affected by security advisories:
+  [^0]: https://github.com/advisories/GHSA-9324-jv53-9cc8
+  [^1]: https://github.com/advisories/GHSA-jwpw-q68h-r678
+8 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Analyzing mobile_engineer_assignment...                         
+
+warning • Unused import: 'package:flutter/material.dart' • lib/core/constants/app/app_strings.dart:1:8 • unused_import
+   info • The imported package 'meta' isn't a dependency of the importing package • lib/core/either.dart:1:8 • depend_on_referenced_packages
+   info • The type parameter name 'Type' matches a visible type name • lib/core/use_cases/use_case.dart:6:27 • avoid_types_as_parameter_names
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/features/cats/data/models/cat_model.dart:4:3 • prefer_const_constructors_in_immutables
+   info • Missing a corresponding override of '==' • lib/features/cats/data/models/cat_model.dart:33:11 • hash_and_equals
+warning • A value for optional parameter 'key' isn't ever given • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:9:33 • unused_element_parameter
+  error • Invalid constant value • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:14:37 • invalid_constant
+  error • Undefined name 'AppSize' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:14:37 • undefined_identifier
+  error • Undefined name 'MasonryGridView' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:15:14 • undefined_identifier
+  error • Undefined name 'AppSize' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:17:25 • undefined_identifier
+  error • Undefined name 'AppSize' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:18:26 • undefined_identifier
+  error • Undefined name 'AppSize' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:19:27 • undefined_identifier
+warning • The '!' will have no effect because the receiver can't be null • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:31:26 • unnecessary_non_null_assertion
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:44:3 • prefer_const_constructors_in_immutables
+  error • Undefined name 'AppStrings' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:49:19 • undefined_identifier
+  error • Undefined name 'AppStrings' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:50:24 • undefined_identifier
+  error • Undefined name 'AppStrings' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:56:23 • undefined_identifier
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/features/cats/presentation/widgets/cats_view.dart:1:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/core/constants/app/app_strings.dart' • lib/features/cats/presentation/widgets/cats_view.dart:1:8 • uri_does_not_exist
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/features/cats/presentation/widgets/cats_view.dart:2:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/core/constants/size/app_size.dart' • lib/features/cats/presentation/widgets/cats_view.dart:2:8 • uri_does_not_exist
+   info • The imported package 'flutter_staggered_grid_view' isn't a dependency of the importing package • lib/features/cats/presentation/widgets/cats_view.dart:5:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart' • lib/features/cats/presentation/widgets/cats_view.dart:5:8 • uri_does_not_exist
+   info • Parameter 'key' could be a super parameter • lib/features/cats/presentation/widgets/cats_view.dart:11:9 • use_super_parameters
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/features/tiers/data/models/tier_model.dart:7:3 • prefer_const_constructors_in_immutables
+   info • Missing a corresponding override of '==' • lib/features/tiers/data/models/tier_model.dart:46:11 • hash_and_equals
+   info • Don't invoke 'print' in production code • lib/features/tiers/domain/use_cases/fetch_result_models.dart:17:5 • avoid_print
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/features/tiers/presentation/blocs/tiers/tiers_cubit.dart:1:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/features/tiers/presentation/blocs/tiers/tiers_state.dart' • lib/features/tiers/presentation/blocs/tiers/tiers_cubit.dart:1:8 • uri_does_not_exist
+  error • The name 'TiersState' isn't a type, so it can't be used as a type argument • lib/features/tiers/presentation/blocs/tiers/tiers_cubit.dart:9:32 • non_type_as_type_argument
+  error • The method 'TiersInitial' isn't defined for the type 'TiersCubit' • lib/features/tiers/presentation/blocs/tiers/tiers_cubit.dart:10:46 • undefined_method
+  error • The method 'TiersInProgress' isn't defined for the type 'TiersCubit' • lib/features/tiers/presentation/blocs/tiers/tiers_cubit.dart:15:10 • undefined_method
+   info • Don't invoke 'print' in production code • lib/features/tiers/presentation/blocs/tiers/tiers_cubit.dart:17:5 • avoid_print
+  error • The method 'TiersFailure' isn't defined for the type 'TiersCubit' • lib/features/tiers/presentation/blocs/tiers/tiers_cubit.dart:20:32 • undefined_method
+  error • The method 'TiersSuccess' isn't defined for the type 'TiersCubit' • lib/features/tiers/presentation/blocs/tiers/tiers_cubit.dart:22:14 • undefined_method
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/features/tiers/presentation/widgets/tier_chart.dart:1:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/features/tiers/presentation/widgets/tier_chart_painter.dart' • lib/features/tiers/presentation/widgets/tier_chart.dart:1:8 • uri_does_not_exist
+warning • Unused import: '../../domain/entities/tier.dart' • lib/features/tiers/presentation/widgets/tier_chart.dart:5:8 • unused_import
+   info • Constructors for public widgets should have a named 'key' parameter • lib/features/tiers/presentation/widgets/tier_chart.dart:10:3 • use_key_in_widget_constructors
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/features/tiers/presentation/widgets/tier_chart.dart:10:3 • prefer_const_constructors_in_immutables
+  error • The method 'TierChartPainter' isn't defined for the type 'TierChart' • lib/features/tiers/presentation/widgets/tier_chart.dart:23:18 • undefined_method
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/features/tiers/presentation/widgets/tier_chart_painter.dart:2:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/core/constants/app/app_strings.dart' • lib/features/tiers/presentation/widgets/tier_chart_painter.dart:2:8 • uri_does_not_exist
+  error • Undefined name 'AppStrings' • lib/features/tiers/presentation/widgets/tier_chart_painter.dart:201:7 • undefined_identifier
+  error • Undefined name 'AppStrings' • lib/features/tiers/presentation/widgets/tier_chart_painter.dart:203:7 • undefined_identifier
+  error • Undefined name 'AppStrings' • lib/features/tiers/presentation/widgets/tier_chart_painter.dart:204:7 • undefined_identifier
+  error • The argument type 'Object?' can't be assigned to the parameter type 'String?'.  • lib/features/tiers/presentation/widgets/tier_chart_painter.dart:238:30 • argument_type_not_assignable
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/tiers/presentation/widgets/tier_chart_painter.dart:286:36 • deprecated_member_use
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/features/tiers/presentation/widgets/tiers_view.dart:1:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/features/tiers/presentation/widgets/tier_chart.dart' • lib/features/tiers/presentation/widgets/tiers_view.dart:1:8 • uri_does_not_exist
+   info • Parameter 'key' could be a super parameter • lib/features/tiers/presentation/widgets/tiers_view.dart:8:9 • use_super_parameters
+  error • The method 'TierChart' isn't defined for the type 'TiersView' • lib/features/tiers/presentation/widgets/tiers_view.dart:21:22 • undefined_method
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/injection_container.dart:1:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/core/constants/network/network_constants.dart' • lib/injection_container.dart:1:8 • uri_does_not_exist
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/injection_container.dart:2:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/features/cats/presentation/blocs/cats/cats_cubit.dart' • lib/injection_container.dart:2:8 • uri_does_not_exist
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/injection_container.dart:3:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/shared/data/data_sources/data_holder/data_holder.dart' • lib/injection_container.dart:3:8 • uri_does_not_exist
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/injection_container.dart:4:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/shared/data/data_sources/remote/remote_data_source.dart' • lib/injection_container.dart:4:8 • uri_does_not_exist
+  error • Undefined name 'NetworkConstants' • lib/injection_container.dart:23:18 • undefined_identifier
+  error • The name 'RemoteDataSource' isn't a type, so it can't be used as a type argument • lib/injection_container.dart:29:31 • non_type_as_type_argument
+  error • The function 'RemoteDataSourceImpl' isn't defined • lib/injection_container.dart:30:11 • undefined_function
+  error • The name 'DataHolder' isn't a type, so it can't be used as a type argument • lib/injection_container.dart:32:31 • non_type_as_type_argument
+  error • The function 'DataHolderImpl' isn't defined • lib/injection_container.dart:33:15 • undefined_function
+  error • The function 'CatsCubit' isn't defined • lib/injection_container.dart:50:31 • undefined_function
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/main.dart:2:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/core/constants/app/app_strings.dart' • lib/main.dart:2:8 • uri_does_not_exist
+   info • Parameter 'key' could be a super parameter • lib/main.dart:15:9 • use_super_parameters
+  error • Undefined name 'AppStrings' • lib/main.dart:20:13 • undefined_identifier
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/pages/home/home_page.dart:1:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/core/constants/size/app_size.dart' • lib/pages/home/home_page.dart:1:8 • uri_does_not_exist
+   info • Parameter 'key' could be a super parameter • lib/pages/home/home_page.dart:15:9 • use_super_parameters
+   info • Unnecessary 'const' keyword • lib/pages/home/home_page.dart:37:21 • unnecessary_const
+  error • Invalid constant value • lib/pages/home/home_page.dart:37:44 • invalid_constant
+  error • Undefined name 'AppSize' • lib/pages/home/home_page.dart:37:44 • undefined_identifier
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/shared/data/data_sources/remote/remote_data_source.dart:1:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/core/constants/network/network_constants.dart' • lib/shared/data/data_sources/remote/remote_data_source.dart:1:8 • uri_does_not_exist
+  error • Undefined name 'NetworkConstants' • lib/shared/data/data_sources/remote/remote_data_source.dart:22:7 • undefined_identifier
+   info • The imported package 'cat_app_toy_project' isn't a dependency of the importing package • lib/shared/data/models/data_response.dart:2:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:cat_app_toy_project/shared/data/models/result_model.dart' • lib/shared/data/models/data_response.dart:2:8 • uri_does_not_exist
+warning • This class (or a class that this class inherits from) is marked as '@immutable', but one or more of its instance fields aren't final: DataResponse.version, DataResponse.isSuccess, DataResponse.result, DataResponse.message, DataResponse.statusCode • lib/shared/data/models/data_response.dart:6:13 • must_be_immutable
+  error • Undefined class 'ResultModel' • lib/shared/data/models/data_response.dart:9:3 • undefined_class
+   info • The member 'toJson' overrides an inherited member but isn't annotated with '@override' • lib/shared/data/models/data_response.dart:21:24 • annotate_overrides
+  error • Undefined name 'ResultModel' • lib/shared/data/models/data_response.dart:37:13 • undefined_identifier
+   info • Missing a corresponding override of '==' • lib/shared/data/models/data_response.dart:48:11 • hash_and_equals
+warning • This class (or a class that this class inherits from) is marked as '@immutable', but one or more of its instance fields aren't final: ResultModel.cats, ResultModel.tiers, ResultModel.currentTier, ResultModel.tierPoints • lib/shared/data/models/result_model.dart:5:13 • must_be_immutable
+   info • The member 'toJson' overrides an inherited member but isn't annotated with '@override' • lib/shared/data/models/result_model.dart:18:24 • annotate_overrides
+   info • Missing a corresponding override of '==' • lib/shared/data/models/result_model.dart:45:11 • hash_and_equals
+

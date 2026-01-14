@@ -1,4 +1,4 @@
-import 'package:cat_app_toy_project/core/constants/network/network_constants.dart';
+import 'package:mobile_engineer_assignment/core/constants/network/network_constants.dart';
 import 'package:dio/dio.dart';
 
 import '../../models/data_response.dart';

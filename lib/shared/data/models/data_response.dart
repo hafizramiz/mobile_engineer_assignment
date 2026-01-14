@@ -1,5 +1,5 @@
 
-import 'package:cat_app_toy_project/shared/data/models/result_model.dart';
+import 'package:mobile_engineer_assignment/shared/data/models/result_model.dart';
 
 import '../../../core/models/base_model.dart';
 

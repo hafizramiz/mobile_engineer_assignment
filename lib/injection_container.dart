@@ -1,7 +1,7 @@
-import 'package:cat_app_toy_project/core/constants/network/network_constants.dart';
-import 'package:cat_app_toy_project/features/cats/presentation/blocs/cats/cats_cubit.dart';
-import 'package:cat_app_toy_project/shared/data/data_sources/data_holder/data_holder.dart';
-import 'package:cat_app_toy_project/shared/data/data_sources/remote/remote_data_source.dart';
+import 'package:mobile_engineer_assignment/core/constants/network/network_constants.dart';
+import 'package:mobile_engineer_assignment/features/cats/presentation/blocs/cats/cats_cubit.dart';
+import 'package:mobile_engineer_assignment/shared/data/data_sources/data_holder/data_holder.dart';
+import 'package:mobile_engineer_assignment/shared/data/data_sources/remote/remote_data_source.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'features/cats/data/repositories/cats_repository.dart';
@@ -11,27 +11,23 @@ import 'features/tiers/data/repositories/tiers_repository.dart';
 import 'features/tiers/domain/repositories/tiers_repository.dart';
 import 'features/tiers/domain/use_cases/fetch_result_models.dart';
 import 'features/tiers/presentation/blocs/tiers/tiers_cubit.dart';
-
+import 'services/api_service.dart';
+import 'blocs/image/image_bloc.dart';
 
 final getIt = GetIt.instance;
 
 Future<void> init() async {
   /// externals
   getIt.registerLazySingleton(
-    () => Dio()
-      ..options = BaseOptions(
-        baseUrl: NetworkConstants.baseUrl,
-      ),
+    () => Dio()..options = BaseOptions(baseUrl: NetworkConstants.baseUrl),
   );
-
 
   ///remote data sources
   getIt.registerLazySingleton<RemoteDataSource>(
     () => RemoteDataSourceImpl(getIt()),
   );
-  getIt.registerLazySingleton<DataHolder>(
-        () => DataHolderImpl(),
-  );
+  getIt.registerLazySingleton<DataHolder>(() => DataHolderImpl());
+  getIt.registerLazySingleton(() => ApiService(dio: getIt()));
 
   /// Repositories
   getIt.registerLazySingleton<CatsRepository>(
@@ -39,8 +35,9 @@ Future<void> init() async {
   );
 
   getIt.registerLazySingleton<TiersRepository>(
-        () => TiersRepositoryImpl(getIt(), getIt()),
+    () => TiersRepositoryImpl(getIt(), getIt()),
   );
+
   /// Use cases
 
   getIt.registerLazySingleton(() => FetchCats(getIt()));
@@ -49,5 +46,5 @@ Future<void> init() async {
   /// blocs
   getIt.registerFactory(() => CatsCubit(getIt()));
   getIt.registerFactory(() => TiersCubit(getIt()));
-
+  getIt.registerFactory(() => ImageBloc(getIt()));
 }

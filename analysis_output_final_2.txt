@@ -1,0 +1,28 @@
+Analyzing mobile_engineer_assignment...                         
+
+   info • The imported package 'meta' isn't a dependency of the importing package • lib/core/either.dart:1:8 • depend_on_referenced_packages
+   info • The type parameter name 'Type' matches a visible type name • lib/core/use_cases/use_case.dart:6:27 • avoid_types_as_parameter_names
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/features/cats/data/models/cat_model.dart:4:3 • prefer_const_constructors_in_immutables
+   info • Missing a corresponding override of '==' • lib/features/cats/data/models/cat_model.dart:33:11 • hash_and_equals
+warning • A value for optional parameter 'key' isn't ever given • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:9:33 • unused_element_parameter
+warning • The '!' will have no effect because the receiver can't be null • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:31:26 • unnecessary_non_null_assertion
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/features/cats/presentation/widgets/_cats_grid_builder.dart:44:3 • prefer_const_constructors_in_immutables
+   info • Parameter 'key' could be a super parameter • lib/features/cats/presentation/widgets/cats_view.dart:11:9 • use_super_parameters
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/features/tiers/data/models/tier_model.dart:7:3 • prefer_const_constructors_in_immutables
+   info • Missing a corresponding override of '==' • lib/features/tiers/data/models/tier_model.dart:46:11 • hash_and_equals
+   info • Don't invoke 'print' in production code • lib/features/tiers/domain/use_cases/fetch_result_models.dart:17:5 • avoid_print
+   info • Don't invoke 'print' in production code • lib/features/tiers/presentation/blocs/tiers/tiers_cubit.dart:17:5 • avoid_print
+   info • Constructors for public widgets should have a named 'key' parameter • lib/features/tiers/presentation/widgets/tier_chart.dart:9:3 • use_key_in_widget_constructors
+   info • Constructors in '@immutable' classes should be declared as 'const' • lib/features/tiers/presentation/widgets/tier_chart.dart:9:3 • prefer_const_constructors_in_immutables
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/features/tiers/presentation/widgets/tier_chart_painter.dart:286:36 • deprecated_member_use
+   info • Parameter 'key' could be a super parameter • lib/features/tiers/presentation/widgets/tiers_view.dart:8:9 • use_super_parameters
+   info • Parameter 'key' could be a super parameter • lib/main.dart:14:9 • use_super_parameters
+   info • Parameter 'key' could be a super parameter • lib/pages/home/home_page.dart:15:9 • use_super_parameters
+   info • Unnecessary 'const' keyword • lib/pages/home/home_page.dart:37:21 • unnecessary_const
+warning • This class (or a class that this class inherits from) is marked as '@immutable', but one or more of its instance fields aren't final: DataResponse.version, DataResponse.isSuccess, DataResponse.result, DataResponse.message, DataResponse.statusCode • lib/shared/data/models/data_response.dart:6:13 • must_be_immutable
+   info • The member 'toJson' overrides an inherited member but isn't annotated with '@override' • lib/shared/data/models/data_response.dart:21:24 • annotate_overrides
+   info • Missing a corresponding override of '==' • lib/shared/data/models/data_response.dart:48:11 • hash_and_equals
+warning • This class (or a class that this class inherits from) is marked as '@immutable', but one or more of its instance fields aren't final: ResultModel.cats, ResultModel.tiers, ResultModel.currentTier, ResultModel.tierPoints • lib/shared/data/models/result_model.dart:5:13 • must_be_immutable
+   info • The member 'toJson' overrides an inherited member but isn't annotated with '@override' • lib/shared/data/models/result_model.dart:18:24 • annotate_overrides
+   info • Missing a corresponding override of '==' • lib/shared/data/models/result_model.dart:45:11 • hash_and_equals
+

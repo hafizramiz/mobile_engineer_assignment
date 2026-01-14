@@ -1,5 +1,5 @@
-import 'package:cat_app_toy_project/core/constants/app/app_strings.dart';
-import 'package:cat_app_toy_project/core/constants/size/app_size.dart';
+import 'package:mobile_engineer_assignment/core/constants/app/app_strings.dart';
+import 'package:mobile_engineer_assignment/core/constants/size/app_size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';

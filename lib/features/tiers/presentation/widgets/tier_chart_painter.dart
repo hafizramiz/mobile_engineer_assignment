@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:cat_app_toy_project/core/constants/app/app_strings.dart';
+import 'package:mobile_engineer_assignment/core/constants/app/app_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/entities/pie_section.dart';
