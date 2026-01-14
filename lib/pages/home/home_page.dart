@@ -31,24 +31,38 @@ class HomePage extends StatelessWidget {
                     children: [
                       _buildImageFrame(state),
                       const SizedBox(height: 40),
-                      ElevatedButton(
-                        onPressed: state is ImageLoading
-                            ? null
-                            : () => context.read<ImageBloc>().add(
-                                FetchImageEvent(),
-                              ),
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 32,
-                            vertical: 16,
+                      Semantics(
+                        button: true,
+                        label: 'Fetch another random image',
+                        child: ElevatedButton(
+                          onPressed: state is ImageLoading
+                              ? null
+                              : () => context.read<ImageBloc>().add(
+                                  FetchImageEvent(),
+                                ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Theme.of(
+                              context,
+                            ).colorScheme.primaryContainer,
+                            foregroundColor: Theme.of(
+                              context,
+                            ).colorScheme.onPrimaryContainer,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 32,
+                              vertical: 16,
+                            ),
+                            elevation: 4,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
                           ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                          child: const Text(
+                            'Another',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        child: const Text(
-                          'Another',
-                          style: TextStyle(fontSize: 18),
                         ),
                       ),
                     ],
@@ -81,7 +95,12 @@ class HomePage extends StatelessWidget {
             ],
           ),
           clipBehavior: Clip.antiAlias,
-          child: _buildImageContent(state),
+          child: Semantics(
+            label: state is ImageLoaded
+                ? 'Randomly fetched image'
+                : 'Image container',
+            child: _buildImageContent(state),
+          ),
         );
       },
     );

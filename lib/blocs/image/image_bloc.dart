@@ -19,25 +19,49 @@ class ImageBloc extends Bloc<ImageEvent, ImageState> {
     emit(ImageLoading());
     try {
       final imageResponse = await _apiService.getRandomImage();
+      final imageUrl = imageResponse.url;
 
-      // Extract color from image
-      final paletteGenerator =
-          await PaletteGenerator.fromImageProvider(
-            CachedNetworkImageProvider(imageResponse.url),
-            maximumColorCount: 20,
-          ).timeout(
-            const Duration(seconds: 5),
-            onTimeout: () {
-              throw Exception('Color extraction timed out');
-            },
+      // 1. Emit immediate state with image and default background
+      // This allows the image to start loading in the UI immediately
+      emit(
+        ImageLoaded(
+          image: imageResponse,
+          backgroundColor: Colors.grey.withValues(alpha: 0.1),
+        ),
+      );
+
+      // 2. Perform color extraction in the background
+      try {
+        // Optimize URL for faster download if it's an Unsplash URL
+        String thumbUrl = imageUrl;
+        if (imageUrl.contains('unsplash.com')) {
+          thumbUrl = imageUrl.contains('?')
+              ? '$imageUrl&w=100&q=50'
+              : '$imageUrl?w=100&q=50';
+        }
+
+        final paletteGenerator = await PaletteGenerator.fromImageProvider(
+          CachedNetworkImageProvider(thumbUrl),
+          maximumColorCount: 20,
+        ).timeout(const Duration(seconds: 5));
+
+        final backgroundColor =
+            paletteGenerator.dominantColor?.color ?? Colors.grey;
+
+        // 3. Emit updated state with the extracted color
+        if (!isClosed) {
+          emit(
+            ImageLoaded(image: imageResponse, backgroundColor: backgroundColor),
           );
-
-      final backgroundColor =
-          paletteGenerator.dominantColor?.color ?? Colors.grey;
-
-      emit(ImageLoaded(image: imageResponse, backgroundColor: backgroundColor));
+        }
+      } catch (e) {
+        debugPrint('Optional color extraction failed: $e');
+        // No need to emit a new state if it fails, the user already has the image
+      }
     } catch (e) {
-      emit(ImageError(e.toString()));
+      if (!isClosed) {
+        emit(ImageError(e.toString()));
+      }
     }
   }
 }
