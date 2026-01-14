@@ -121,11 +121,32 @@ class HomePage extends StatelessWidget {
     } else if (state is ImageError) {
       return Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(
-            state.message,
-            textAlign: TextAlign.center,
-            style: const TextStyle(color: Colors.red),
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.broken_image_outlined,
+                size: 64,
+                color: Colors.white.withValues(alpha: 0.5),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'This image is unavailable',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Please tap "Another" to fetch a new one.',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white70),
+              ),
+            ],
           ),
         ),
       );

@@ -34,10 +34,16 @@ class ImageBloc extends Bloc<ImageEvent, ImageState> {
       try {
         // Optimize URL for faster download if it's an Unsplash URL
         String thumbUrl = imageUrl;
-        if (imageUrl.contains('unsplash.com')) {
-          thumbUrl = imageUrl.contains('?')
-              ? '$imageUrl&w=100&q=50'
-              : '$imageUrl?w=100&q=50';
+        try {
+          if (imageUrl.contains('unsplash.com')) {
+            final uri = Uri.parse(imageUrl);
+            final params = Map<String, String>.from(uri.queryParameters);
+            params['w'] = '100';
+            params['q'] = '50';
+            thumbUrl = uri.replace(queryParameters: params).toString();
+          }
+        } catch (e) {
+          // Fallback to original URL if parsing fails
         }
 
         final paletteGenerator = await PaletteGenerator.fromImageProvider(
@@ -55,8 +61,8 @@ class ImageBloc extends Bloc<ImageEvent, ImageState> {
           );
         }
       } catch (e) {
-        debugPrint('Optional color extraction failed: $e');
-        // No need to emit a new state if it fails, the user already has the image
+        // Silent fail for optional color extraction to reduce console noise
+        // The image will still be displayed with the fallback background
       }
     } catch (e) {
       if (!isClosed) {
